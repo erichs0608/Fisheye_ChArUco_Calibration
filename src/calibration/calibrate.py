@@ -87,7 +87,7 @@ class CharucoCalibrator:
         
 
         
-    def generate_charuco_board(self) -> None:
+    def generate_charuco_board(self, dir) -> None:
         """
         This function creates a ChArUco board and saves it data/charuco_board.png.
         """
@@ -96,7 +96,8 @@ class CharucoCalibrator:
         cv2.imshow("charuco_board.png", img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
-        output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/calibration/charuco_board.png')
+        #output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../data/calibration/charuco_board.png')
+        output_path = os.path.join(dir, 'charuco_board.png')
         cv2.imwrite(output_path, img)
         print(f"ChArUco board saved to {output_path}")
         
